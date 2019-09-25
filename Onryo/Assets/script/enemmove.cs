@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemmove : MonoBehaviour {
+public class enemmove : MonoBehaviour
+{
 
     public float speed = 1f;
     public float rotationspeed = 1f;
@@ -16,7 +17,7 @@ public class enemmove : MonoBehaviour {
         //return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
         //    0, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
 
-        return new Vector3(10,0,10);
+        return new Vector3(10, 0, 10);
     }
 
     void haikai()
@@ -33,16 +34,29 @@ public class enemmove : MonoBehaviour {
         //Debug.Log("haikai");
     }
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start()
     {
         targetpos = GetRandomPosition(transform.position);
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    }
+
+    // Update is called once per frame
+    void Update()
     {
         targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
         haikai();
-	}
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            GetComponent<enemmove>().enabled = false;
+            GetComponent<Onryocon>().enabled = true;
+        }
+    }
+
+
 }
+
+
