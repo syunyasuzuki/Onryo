@@ -22,6 +22,7 @@ public class titleCon : MonoBehaviour
             FadeCon.isFade1 = true;
             FadeCon.isFadeOut1 = true;
             audio.PlayOneShot(Start_SE);
+            audio.Stop();
             Invoke("Scene", 3.0f);
         }
 	}
