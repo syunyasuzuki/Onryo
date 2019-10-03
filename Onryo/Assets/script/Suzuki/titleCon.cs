@@ -9,6 +9,8 @@ public class titleCon : MonoBehaviour
     public AudioClip title_BGM;
     AudioSource audio;
 
+    int sound_count = 0;
+
 	// Use this for initialization
 	void Start ()
     {
@@ -22,10 +24,14 @@ public class titleCon : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
+            sound_count++;
             FadeCon.isFade1 = true;
             FadeCon.isFadeOut1 = true;
-            audio.clip = Start_SE;
-            audio.Play();
+            if (sound_count <= 1)
+            {
+                audio.clip = Start_SE;
+                audio.Play();
+            }
             Invoke("Scene", 4.35f);
         }
 	}
