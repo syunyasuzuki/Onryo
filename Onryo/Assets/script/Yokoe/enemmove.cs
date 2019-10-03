@@ -5,8 +5,8 @@ using UnityEngine;
 public class enemmove : MonoBehaviour
 {
 
-    public float speed = 1f;
-    public float rotationspeed = 1f;
+    public float speed = 3f;  //移動速度
+    public float rotationspeed = 1f;　//向きを変える速度
     public float posrange = 10.0f;
     private Vector3 targetpos;
     private float changetarget = 50f;
@@ -14,10 +14,10 @@ public class enemmove : MonoBehaviour
 
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
-        //return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
-        //    0, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
+        return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
+            0, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
 
-        return new Vector3(10, 0, 10);
+        //return new Vector3(10, 0, 10);
     }
 
     void haikai()
