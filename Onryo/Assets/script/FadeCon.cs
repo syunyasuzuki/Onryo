@@ -8,7 +8,7 @@ public class FadeCon : MonoBehaviour
 {
     public Image FadeImage1;
     public Image FadeImage2;
-    public Image FadeImage3;
+    //public Image FadeImage3;
 
     public static bool isFade1;
     public static bool isFadeOut1;
@@ -18,13 +18,13 @@ public class FadeCon : MonoBehaviour
     public static bool isFadeOut2;
     public static bool isFadeIn2;
 
-    public static bool isFade3;
-    public static bool isFadeOut3;
-    public static bool isFadeIn3;
+    //public static bool isFade3;
+    //public static bool isFadeOut3;
+    //public static bool isFadeIn3;
 
     public static float alpha1;
     public static float alpha2;
-    public static float alpha3;
+    //public static float alpha3;
 
     // Use this for initialization
     void Start ()
@@ -37,27 +37,27 @@ public class FadeCon : MonoBehaviour
         isFadeIn2 = true;
         isFadeOut2 = false;
 
-        isFade3 = true;
-        isFadeIn3 = true;
-        isFadeOut3 = false;
+        //isFade3 = true;
+        //isFadeIn3 = true;
+        //isFadeOut3 = false;
 
         if (SceneManager.GetActiveScene().name == "ClearScene")
         {
             alpha1 = 0.0f;
             alpha2 = 1.0f;
-            alpha3 = 0.0f;
+            //alpha3 = 0.0f;
         }
-        else if (SceneManager.GetActiveScene().name == "GameOverScene")
-        {
-            alpha1 = 0.0f;
-            alpha2 = 0.0f;
-            alpha3 = 1.0f;
-        }
+        //else if (SceneManager.GetActiveScene().name == "GameOverScene")
+        //{
+        //    alpha1 = 0.0f;
+        //    alpha2 = 0.0f;
+        //    alpha3 = 1.0f;
+        //}
         else
         {
             alpha1 = 1.0f;
             alpha2 = 0.0f;
-            alpha3 = 0.0f;
+            //alpha3 = 0.0f;
         }
     }
 	
@@ -87,22 +87,22 @@ public class FadeCon : MonoBehaviour
                 FadeOut2();
             }
         }
-        if (isFade3)
-        {
-            if (isFadeIn3)
-            {
-                FadeIn3();
-            }
-            else if (isFadeOut3)
-            {
-                FadeOut3();
-            }
-        }
+        //if (isFade3)
+        //{
+        //    if (isFadeIn3)
+        //    {
+        //        FadeIn3();
+        //    }
+        //    else if (isFadeOut3)
+        //    {
+        //        FadeOut3();
+        //    }
+        //}
     }
 
     public void FadeIn1()
     {
-        alpha1 -= 0.05f;
+        alpha1 -= 0.02f;
         FadeImage1.color = new Color(1.0f, 1.0f, 1.0f, alpha1);
         if (alpha1 <= 0.0f)
         {
@@ -113,7 +113,7 @@ public class FadeCon : MonoBehaviour
 
     public void FadeOut1()
     {
-        alpha1 += 0.05f;
+        alpha1 += 0.02f;
         FadeImage1.color = new Color(1.0f, 1.0f, 1.0f, alpha1);
         if (alpha1 >= 1.0f)
         {
@@ -143,24 +143,24 @@ public class FadeCon : MonoBehaviour
         }
     }
 
-    public void FadeIn3()
-    {
-        alpha3 -= 0.05f;
-        FadeImage3.color = new Color(1.0f, 1.0f, 1.0f, alpha3);
-        if (alpha3 <= 0.0f)
-        {
-            isFadeIn3 = false;
-            isFade3 = false;
-        }
-    }
-    public void FadeOut3()
-    {
-        alpha3 += 0.05f;
-        FadeImage3.color = new Color(1.0f, 1.0f, 1.0f, alpha3);
-        if (alpha3 >= 1.0f)
-        {
-            isFadeOut3 = false;
-            isFade3 = false;
-        }
-    }
+    //public void FadeIn3()
+    //{
+    //    alpha3 -= 0.05f;
+    //    FadeImage3.color = new Color(1.0f, 1.0f, 1.0f, alpha3);
+    //    if (alpha3 <= 0.0f)
+    //    {
+    //        isFadeIn3 = false;
+    //        isFade3 = false;
+    //    }
+    //}
+    //public void FadeOut3()
+    //{
+    //    alpha3 += 0.05f;
+    //    FadeImage3.color = new Color(1.0f, 1.0f, 1.0f, alpha3);
+    //    if (alpha3 >= 1.0f)
+    //    {
+    //        isFadeOut3 = false;
+    //        isFade3 = false;
+    //    }
+    //}
 }
