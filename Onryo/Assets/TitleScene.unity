@@ -121,8 +121,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 90991302}
-  - component: {fileID: 90991301}
   - component: {fileID: 90991303}
+  - component: {fileID: 90991301}
   m_Layer: 0
   m_Name: titleManager
   m_TagString: Untagged
@@ -139,7 +139,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3bb89e9bf868ab644a724f941537055e, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -235,6 +235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Start_SE: {fileID: 8300000, guid: 1d92d325971516b4782a0a1902169d00, type: 3}
+  title_BGM: {fileID: 8300000, guid: 3bb89e9bf868ab644a724f941537055e, type: 3}
 --- !u!1 &459252761
 GameObject:
   m_ObjectHideFlags: 0
