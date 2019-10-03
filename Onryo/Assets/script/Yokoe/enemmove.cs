@@ -51,10 +51,17 @@ public class enemmove : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GetComponent<enemmove>().enabled = false;
-            GetComponent<Onryocon>().enabled = true;
+            Invoke("Metamorphose", 3);
         }
     }
+
+    void Metamorphose()
+    {
+        GetComponent<enemmove>().enabled = false;
+        GetComponent<Onryocon>().enabled = true;
+    }
+
+
 
 
 }
