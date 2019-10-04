@@ -43,7 +43,7 @@ public class enemmove : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         audio.clip = Ghost_SE; //audioにGhost_SEをセット
-        
+        audio.Play();
         targetpos = GetRandomPosition(transform.position);
     }
 
@@ -53,14 +53,7 @@ public class enemmove : MonoBehaviour
         targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
         haikai();
 
-        if (PlayerCon.flag)
-        {
-            audio.Play();
-        }
-        else
-        {
-            audio.Stop();
-        }
+        
     }
 
     void OnCollisionEnter(Collision other)
@@ -76,9 +69,6 @@ public class enemmove : MonoBehaviour
         GetComponent<enemmove>().enabled = false;
         GetComponent<Onryocon>().enabled = true;
     }
-
-
-
 
 }
 

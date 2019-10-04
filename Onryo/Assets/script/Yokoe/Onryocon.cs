@@ -45,7 +45,7 @@ public class Onryocon : MonoBehaviour {
     {
         audio = GetComponent<AudioSource>();
         audio.clip = Onryo_SE; //audioにOnryo_SEをセット
-
+        audio.Play();
         targetpos = GetRandomPosition(transform.position);
         rb = GetComponent<Rigidbody>();
     }
@@ -89,13 +89,6 @@ public class Onryocon : MonoBehaviour {
             haikai();
         }
 
-        if (PlayerCon.flag)
-        {
-            audio.Play();
-        }
-        else
-        {
-            audio.Stop();
-        }
+        
     }
 }

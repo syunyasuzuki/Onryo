@@ -25,7 +25,7 @@ public class PlayerCon : MonoBehaviour {
         {
             transform.position += transform.forward * speed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = 0;
             flag = true;
