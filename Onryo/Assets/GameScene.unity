@@ -702,6 +702,22 @@ Prefab:
       propertyPath: m_LocalScale.x
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 6400000, guid: 20bfb4291f41f984d8ea01bed5392d00, type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 20bfb4291f41f984d8ea01bed5392d00, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 20bfb4291f41f984d8ea01bed5392d00, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 20bfb4291f41f984d8ea01bed5392d00, type: 3}
+      propertyPath: m_LightProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 20bfb4291f41f984d8ea01bed5392d00, type: 3}
   m_IsPrefabParent: 0
@@ -906,7 +922,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4544634092333518, guid: 42776951294e7ac4fa8ef9332dda4a2e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 258.2
+      value: 430
       objectReference: {fileID: 0}
     - target: {fileID: 4544634092333518, guid: 42776951294e7ac4fa8ef9332dda4a2e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -914,7 +930,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4544634092333518, guid: 42776951294e7ac4fa8ef9332dda4a2e, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 470.43
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 4544634092333518, guid: 42776951294e7ac4fa8ef9332dda4a2e, type: 2}
       propertyPath: m_LocalRotation.x

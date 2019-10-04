@@ -43,7 +43,7 @@ public class enemmove : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         audio.clip = Ghost_SE; //audioにGhost_SEをセット
-        audio.Play();
+        
         targetpos = GetRandomPosition(transform.position);
     }
 

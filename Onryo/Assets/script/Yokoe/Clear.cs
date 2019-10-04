@@ -15,8 +15,13 @@ public class Clear : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            SceneManager.LoadScene("TitleScene");
+            Invoke("Go_Title", 2.0f);
         }    
+    }
+
+    void Go_Title()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 
 }

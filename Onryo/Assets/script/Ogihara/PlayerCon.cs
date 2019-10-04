@@ -65,7 +65,14 @@ public class PlayerCon : MonoBehaviour {
     {
         if (col.gameObject.name == "Goal")
         {
-            SceneManager.LoadScene("GameClearScene");
+            FadeCon.isFade2 = true;
+            FadeCon.isFadeOut2 = true;
+            Invoke("GameClear", 2.0f);
         }
+    }
+
+    void GameClear()
+    {
+        SceneManager.LoadScene("GameClearScene");
     }
 }
