@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCon : MonoBehaviour {
 
-    public float speed = 3f;//移動速度
+    public float speed;//移動速度
     public GameObject Player;
     public float roatspeed = 2;//回転速度
     static public bool flag = false;// 左Shiftが押されているかどうかの判定用
@@ -23,7 +23,7 @@ public class PlayerCon : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey("up"))
         {
-            transform.position += transform.forward * speed * Time.deltaTime;
+            transform.position += transform.forward * speed *Time.deltaTime;
         }
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -32,7 +32,7 @@ public class PlayerCon : MonoBehaviour {
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = 4;
+            speed = 0.3f;
             flag = false;
         }
     }
