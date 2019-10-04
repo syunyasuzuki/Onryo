@@ -36,6 +36,8 @@ public class PlayerCon : MonoBehaviour {
             speed = 0.0f;
             if (audio_Con >= 1)
             {
+                FadeCon.isFade1 = true;
+                FadeCon.isFadeOut1 = true;
                 Onryocon.audio.Play();
                 enemmove.audio.Play();
                 flag = true;
@@ -49,6 +51,8 @@ public class PlayerCon : MonoBehaviour {
                 speed = 7.8f;
                 if (audio_Con == 0)
                 {
+                    FadeCon.isFade1 = true;
+                    FadeCon.isFadeIn1 = true;
                     Onryocon.audio.Stop();
                     enemmove.audio.Stop();
                     flag = false;
