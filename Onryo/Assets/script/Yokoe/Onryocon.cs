@@ -98,21 +98,22 @@ public class Onryocon : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            Invoke("GameOver", 3.5f);
-            audio.clip = Onryo_SE2;
-            audio.Play();
+            Invoke("GameOver", 2.0f);
+            //audio.clip = Onryo_SE2;
+            //audio.Play();
         }
     }
 
     void GameOver()
     {
-        FadeCon.isFade1 = true;
-        FadeCon.isFadeOut1 = true;
-        Invoke("Reload", 2.0f);
+        SceneManager.LoadScene("GameScene");
+        //FadeCon.isFade1 = true;
+        //FadeCon.isFadeOut1 = true;
+        //Invoke("Reload", 2.0f);
     }
 
-    void Reload()
-    {
-        SceneManager.LoadScene("GameScene");
-    }
+    //void Reload()
+    //{
+    //    SceneManager.LoadScene("GameScene");
+    //}
 }
