@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Onryocon : MonoBehaviour {
 
-    public float speed = 1f;
+    private float speed = 4f;
     public float rotationspeed = 1f;
     public float posrange = 10.0f;
     private Vector3 targetpos;
@@ -70,21 +70,21 @@ public class Onryocon : MonoBehaviour {
         float y2 = tmp2.y;
         float z2 = tmp2.z;
 
-        if (tmp2.x - tmp.x <= 5 || tmp2.x - tmp.x >= -5 & tmp2.z - tmp.z >= 5)
+        if (tmp2.x - tmp.x <= 2 || tmp2.x - tmp.x >= 2 & tmp2.z - tmp.z >= 2|| tmp2.z - tmp.z >= -2)
         {
             //targetの向きに少しずつ向きが変わる
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
 
-            speed = 0.2f;
+            speed = 6f;
 
             //targetに向かって進む
-            transform.position += transform.forward * speed;
+            transform.position += transform.forward * speed * Time.deltaTime;
             //rb.AddForce(a * speed, 0, b * speed);
 
         }
         else
         {
-            speed = 1.0f;
+            speed = 4f;
             targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
             haikai();
         }
