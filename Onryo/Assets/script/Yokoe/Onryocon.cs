@@ -19,6 +19,7 @@ public class Onryocon : MonoBehaviour {
     private Vector3 vec;
 
     public AudioClip Onryo_SE;
+    public AudioClip Onryo_SE2;
 
     static public AudioSource audio;
 
@@ -97,7 +98,21 @@ public class Onryocon : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("GameScene");
+            Invoke("GameOver", 3.5f);
+            audio.clip = Onryo_SE2;
+            audio.Play();
         }
+    }
+
+    void GameOver()
+    {
+        FadeCon.isFade1 = true;
+        FadeCon.isFadeOut1 = true;
+        Invoke("Reload", 2.0f);
+    }
+
+    void Reload()
+    {
+        SceneManager.LoadScene("GameScene");
     }
 }

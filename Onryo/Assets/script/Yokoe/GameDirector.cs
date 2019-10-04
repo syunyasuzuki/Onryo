@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameDirector : MonoBehaviour {
 
@@ -53,8 +54,18 @@ public class GameDirector : MonoBehaviour {
                 
             }
         }
-        
 
-       
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            FadeCon.isFade1 = true;
+            FadeCon.isFadeOut1 = true;
+            Invoke("Go_Title", 2.0f);
+        }
+    }
+
+    void Go_Title()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 }
