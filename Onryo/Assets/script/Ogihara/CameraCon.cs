@@ -14,6 +14,8 @@ public class CameraCon : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;//マウスカーソルを真ん中に固定
+        Cursor.visible = false;    //マウスカーソルを非表示
 
         PlayerTransform = transform.parent;
         CameraTransform = GetComponent<Transform>();
@@ -26,11 +28,11 @@ public class CameraCon : MonoBehaviour {
         X_Rotation = Input.GetAxis("Mouse X");
         Y_Rotation = Input.GetAxis("Mouse Y");
         PlayerTransform.transform.Rotate(0, X_Rotation, 0);
-        //CameraTransform.transform.Rotate(-Y_Rotation, 0, 0);
+        CameraTransform.transform.Rotate(-Y_Rotation, 0, 0);
 
         float angleDir = PlayerTransform.transform.eulerAngles.y * (Mathf.PI / 180.0f);
         Vector3 dir1 = new Vector3(Mathf.Sin(angleDir), 0, Mathf.Cos(angleDir));
-        //Vector3 dir2 = new Vector3(-Mathf.Cos(angleDir), 0, Mathf.Sin(angleDir));
+        Vector3 dir2 = new Vector3(-Mathf.Cos(angleDir), 0, Mathf.Sin(angleDir));
 
 
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerCon : MonoBehaviour {
 
@@ -34,6 +35,14 @@ public class PlayerCon : MonoBehaviour {
         {
             speed = 0.3f;
             flag = false;
+        }
+    }
+
+    void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.name == "Goal")
+        {
+            SceneManager.LoadScene("GameClearScene");
         }
     }
 }
