@@ -7,7 +7,7 @@ public class PlayerCon : MonoBehaviour {
     public float speed = 3f;//移動速度
     public GameObject Player;
     public float roatspeed = 2;//回転速度
-    bool flag = false;// 左Shiftが押されているかどうかの判定用
+    static public bool flag = false;// 左Shiftが押されているかどうかの判定用
     void Start()
     {
 
