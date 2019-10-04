@@ -167,7 +167,7 @@ MonoBehaviour:
   targetdistance: 0
   target: {fileID: 0}
   rb: {fileID: 0}
-  Onryo_SE: {fileID: 8300000, guid: 35b36b52778885248b2445ba2607b561, type: 3}
+  Onryo_SE: {fileID: 8300000, guid: 58a49251be86ac44bb2b6282007859b8, type: 3}
 --- !u!114 &114968512443031240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,4 +183,4 @@ MonoBehaviour:
   rotationspeed: 1
   posrange: 10
   targetdistance: 0
-  Ghost_SE: {fileID: 8300000, guid: e1454e2fc170ac441a6fd2dab7076583, type: 3}
+  Ghost_SE: {fileID: 8300000, guid: a2f581c1925ed304b83383a8fe5051df, type: 3}

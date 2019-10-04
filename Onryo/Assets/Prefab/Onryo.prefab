@@ -166,4 +166,4 @@ MonoBehaviour:
   targetdistance: 0
   target: {fileID: 0}
   rb: {fileID: 0}
-  Onryo_SE: {fileID: 8300000, guid: 35b36b52778885248b2445ba2607b561, type: 3}
+  Onryo_SE: {fileID: 8300000, guid: 58a49251be86ac44bb2b6282007859b8, type: 3}

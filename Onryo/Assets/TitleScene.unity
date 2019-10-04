@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71f8cd63a4ea5124996ea5f32e71c104, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Start_SE: {fileID: 8300000, guid: 1d92d325971516b4782a0a1902169d00, type: 3}
-  title_BGM: {fileID: 8300000, guid: 3bb89e9bf868ab644a724f941537055e, type: 3}
+  Start_SE: {fileID: 8300000, guid: ff1fca545693d1e498c92813216c7a4b, type: 3}
+  title_BGM: {fileID: 8300000, guid: e92b80b86e254d14eb441bc5d276e1df, type: 3}
 --- !u!1 &459252761
 GameObject:
   m_ObjectHideFlags: 0
