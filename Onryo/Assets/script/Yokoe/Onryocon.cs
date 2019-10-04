@@ -37,15 +37,15 @@ public class Onryocon : MonoBehaviour {
             Quaternion.Slerp(transform.rotation, targetRotation,
             Time.deltaTime * rotationspeed);
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        //Debug.Log("haikai");
+        Debug.Log("haikai");
     }
 
     // Use this for initialization
     void Start ()
     {
         audio = GetComponent<AudioSource>();
-        audio.clip = Onryo_SE; //audioにOnryo_SEをセット
-
+        audio.clip = Onryo_SE;
+        audio.Play();
         targetpos = GetRandomPosition(transform.position);
         rb = GetComponent<Rigidbody>();
     }
@@ -88,14 +88,8 @@ public class Onryocon : MonoBehaviour {
             targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
             haikai();
         }
+       
 
-        if (PlayerCon.flag)
-        {
-            audio.Play();
-        }
-        else
-        {
-            audio.Stop();
-        }
+
     }
 }
