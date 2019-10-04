@@ -20,7 +20,7 @@ public class Onryocon : MonoBehaviour {
 
     public AudioClip Onryo_SE;
 
-    AudioSource audio;
+    static public AudioSource audio;
 
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
@@ -47,7 +47,7 @@ public class Onryocon : MonoBehaviour {
     {
         audio = GetComponent<AudioSource>();
         audio.clip = Onryo_SE; //audioにOnryo_SEをセット
-        audio.Play();
+        
         targetpos = GetRandomPosition(transform.position);
         rb = GetComponent<Rigidbody>();
     }

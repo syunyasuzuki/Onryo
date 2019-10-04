@@ -14,7 +14,7 @@ public class enemmove : MonoBehaviour
 
     public AudioClip Ghost_SE;
 
-    AudioSource audio;
+    static public AudioSource audio;
 
     Vector3 GetRandomPosition(Vector3 currentpos)
     {

@@ -8,7 +8,9 @@ public class PlayerCon : MonoBehaviour {
     public float speed;//移動速度
     public GameObject Player;
     public float roatspeed = 2;//回転速度
-    static public bool flag = false;// 左Shiftが押されているかどうかの判定用
+    bool flag = false;// 左Shiftが押されているかどうかの判定用
+
+    int audio_Con;
     void Start()
     {
 
@@ -26,15 +28,32 @@ public class PlayerCon : MonoBehaviour {
         {
             transform.position += transform.forward * speed *Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+
+        //左クリックを押したら霊聴を使用
+        if (Input.GetMouseButtonDown(1) && !flag)
         {
-            speed = 0;
-            flag = true;
+            audio_Con++;
+            speed = 0.0f;
+            if (audio_Con >= 1)
+            {
+                Onryocon.audio.Play();
+                enemmove.audio.Play();
+                flag = true;
+            }
         }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        else  //霊聴を止める
         {
-            speed = 0.3f;
-            flag = false;
+            if (Input.GetMouseButtonDown(1) && flag)
+            {
+                audio_Con = 0;
+                speed = 7.8f;
+                if (audio_Con == 0)
+                {
+                    Onryocon.audio.Stop();
+                    enemmove.audio.Stop();
+                    flag = false;
+                }
+            }
         }
     }
 
