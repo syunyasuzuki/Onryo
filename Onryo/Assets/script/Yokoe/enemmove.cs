@@ -5,7 +5,7 @@ using UnityEngine;
 public class enemmove : MonoBehaviour
 {
 
-    public float speed = 3f;  //移動速度
+    public float speed = 4f;  //移動速度
     public float rotationspeed = 1f;　//向きを変える速度
     public float posrange = 10.0f;
     private Vector3 targetpos;
