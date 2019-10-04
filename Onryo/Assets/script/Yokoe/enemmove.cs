@@ -12,6 +12,10 @@ public class enemmove : MonoBehaviour
     private float changetarget = 50f;
     public float targetdistance;
 
+    public AudioClip Ghost_SE;
+
+    AudioSource audio;
+
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
         return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
@@ -37,6 +41,9 @@ public class enemmove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        audio = GetComponent<AudioSource>();
+        audio.clip = Ghost_SE;
+        audio.Play();
         targetpos = GetRandomPosition(transform.position);
     }
 

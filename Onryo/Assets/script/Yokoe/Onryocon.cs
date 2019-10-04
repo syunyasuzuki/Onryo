@@ -16,6 +16,10 @@ public class Onryocon : MonoBehaviour {
 
     private Vector3 vec;
 
+    public AudioClip Onryo_SE;
+
+    AudioSource audio;
+
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
         return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
@@ -39,6 +43,9 @@ public class Onryocon : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        audio = GetComponent<AudioSource>();
+        audio.clip = Onryo_SE;
+        audio.Play();
         targetpos = GetRandomPosition(transform.position);
         rb = GetComponent<Rigidbody>();
     }
