@@ -73,12 +73,14 @@ public class Onryocon : MonoBehaviour {
         float y2 = tmp2.y;
         float z2 = tmp2.z;
 
-        if (tmp2.x - tmp.x <= 5 && tmp2.x - tmp.x >= -5 && tmp2.z - tmp.z <= 5 && tmp2.z - tmp.z >= -5) 
+        if (tmp2.x - tmp.x <= 70 && tmp2.x - tmp.x >= -70 && tmp2.z - tmp.z <= 70 && tmp2.z - tmp.z >= -70) 
         {
             //targetの向きに少しずつ向きが変わる
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
 
-            speed = 6f;
+            //speed = 6f;
+
+            speed = 10f;
 
             //targetに向かって進む
             transform.position += transform.forward * speed * Time.deltaTime;
