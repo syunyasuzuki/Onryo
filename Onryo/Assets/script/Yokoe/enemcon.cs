@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemcon : MonoBehaviour {
+public class enemcon : MonoBehaviour
+{
+    public float start_Pos;
 
 	// Use this for initialization
 	void Start ()
