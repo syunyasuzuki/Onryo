@@ -22,4 +22,18 @@ public class enemcon : MonoBehaviour
         transform.position = new Vector3(x+ start_Pos, pos.y, pos.z);
 
     }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Invoke("Metamorphose", 3);
+        }
+    }
+
+    void Metamorphose()
+    {
+        GetComponent<enemcon>().enabled = false;
+        GetComponent<Onryocon>().enabled = true;
+    }
 }

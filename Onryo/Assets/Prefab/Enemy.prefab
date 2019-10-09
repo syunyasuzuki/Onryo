@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4184200809460472}
   - component: {fileID: 54886908423972864}
   - component: {fileID: 65146584183030234}
-  - component: {fileID: 114968512443031240}
   - component: {fileID: 114566274297662734}
   - component: {fileID: 82573230386288044}
+  - component: {fileID: 114246515157953772}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -151,6 +151,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114246515157953772
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785318322407304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b80951a7ddee9946bc884560d01ca14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  start_Pos: 0
 --- !u!114 &114566274297662734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,19 +181,3 @@ MonoBehaviour:
   rb: {fileID: 0}
   Onryo_SE: {fileID: 8300000, guid: 58a49251be86ac44bb2b6282007859b8, type: 3}
   Onryo_SE2: {fileID: 8300000, guid: 005036ffac8a82645a23f04df3889290, type: 3}
---- !u!114 &114968512443031240
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1785318322407304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f6309121f7e954ba14921a1f8fee80, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  rotationspeed: 1
-  posrange: 10
-  targetdistance: 0
-  Ghost_SE: {fileID: 8300000, guid: a2f581c1925ed304b83383a8fe5051df, type: 3}
