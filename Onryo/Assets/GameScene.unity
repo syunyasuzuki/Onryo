@@ -1432,6 +1432,11 @@ Prefab:
       propertyPath: m_Name
       value: Onryo (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 82018549602089316, guid: 5bbe75e000b0dc4419656c8b04d502d2,
+        type: 2}
+      propertyPath: MaxDistance
+      value: 70
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5bbe75e000b0dc4419656c8b04d502d2, type: 2}
   m_IsPrefabParent: 0
