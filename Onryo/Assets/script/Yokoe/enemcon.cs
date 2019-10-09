@@ -18,26 +18,8 @@ public class enemcon : MonoBehaviour
         Transform myTransform = transform;
 
         Vector3 pos = transform.position;
-        //float x = Mathf.Sin(Time.time) * 10.0f;
-        //transform.position = new Vector3(x, pos.y, pos.z);
-       
-        while(true)
-        {
-            if (pos.x == 422f)
-            {
-                pos.x += 0.1f;
-                myTransform.position = pos;  // 座標を設定;
-            }
-            else if (pos.x == 432f)
-            {
-                pos.x -= 0.1f;
-                myTransform.position = pos;  // 座標を設定
-            }
-            break;
-        }
-        
-
-       
+        float x = Mathf.Sin(Time.time) * 10.0f;
+        transform.position = new Vector3(x+ start_Pos, pos.y, pos.z);
 
     }
 }
