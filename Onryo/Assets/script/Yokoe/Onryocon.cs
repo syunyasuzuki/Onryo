@@ -26,7 +26,7 @@ public class Onryocon : MonoBehaviour {
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
         return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
-            0, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
+            1, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
     }
 
     void haikai()
