@@ -1121,6 +1121,11 @@ Prefab:
       propertyPath: start_Pos
       value: 260
       objectReference: {fileID: 0}
+    - target: {fileID: 82573230386288044, guid: 70b648f0fecd1724790a098ba556c75b,
+        type: 2}
+      propertyPath: Pan2D
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70b648f0fecd1724790a098ba556c75b, type: 2}
   m_IsPrefabParent: 0
