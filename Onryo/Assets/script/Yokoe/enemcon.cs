@@ -15,11 +15,29 @@ public class enemcon : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        Transform myTransform = transform;
 
-        // 三角関数を用いてX軸方向に揺らす
         Vector3 pos = transform.position;
-        float x = Mathf.Sin(Time.time) * 10.0f;
-        transform.position = new Vector3(x + start_Pos/*x+ pos.x*/, pos.y, pos.z);
+        //float x = Mathf.Sin(Time.time) * 10.0f;
+        //transform.position = new Vector3(x, pos.y, pos.z);
+       
+        while(true)
+        {
+            if (pos.x == 422f)
+            {
+                pos.x += 0.1f;
+                myTransform.position = pos;  // 座標を設定;
+            }
+            else if (pos.x == 432f)
+            {
+                pos.x -= 0.1f;
+                myTransform.position = pos;  // 座標を設定
+            }
+            break;
+        }
+        
+
+       
 
     }
 }
