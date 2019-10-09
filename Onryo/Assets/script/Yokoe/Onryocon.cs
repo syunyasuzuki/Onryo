@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Onryocon : MonoBehaviour {
 
-    private float speed = 4f;
+    private float speed = 8f;
     public float rotationspeed = 1f;
     public float posrange = 10.0f;
     private Vector3 targetpos;
@@ -26,7 +26,7 @@ public class Onryocon : MonoBehaviour {
     Vector3 GetRandomPosition(Vector3 currentpos)
     {
         return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
-            1, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
+            1.3f, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
     }
 
     void haikai()
@@ -73,7 +73,7 @@ public class Onryocon : MonoBehaviour {
         float y2 = tmp2.y;
         float z2 = tmp2.z;
 
-        if (tmp2.x - tmp.x <= 70 && tmp2.x - tmp.x >= -70 && tmp2.z - tmp.z <= 70 && tmp2.z - tmp.z >= -70) 
+        if (tmp2.x - tmp.x <= 100 && tmp2.x - tmp.x >= -100 && tmp2.z - tmp.z <= 100 && tmp2.z - tmp.z >= -100) 
         {
             //targetの向きに少しずつ向きが変わる
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
@@ -89,7 +89,7 @@ public class Onryocon : MonoBehaviour {
         }
         else
         {
-            speed = 4f;
+            speed = 8f;
             targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
             haikai();
         }
