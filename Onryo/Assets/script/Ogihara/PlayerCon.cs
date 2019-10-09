@@ -39,7 +39,7 @@ public class PlayerCon : MonoBehaviour {
                 FadeCon.isFade1 = true;
                 FadeCon.isFadeOut1 = true;
                 Onryocon.audio.Play();
-                enemmove.audio.Play();
+                //enemcon.audio.Play();
                 flag = true;
             }
         }
@@ -54,7 +54,7 @@ public class PlayerCon : MonoBehaviour {
                     FadeCon.isFade1 = true;
                     FadeCon.isFadeIn1 = true;
                     Onryocon.audio.Stop();
-                    enemmove.audio.Stop();
+                    //enemcon.audio.Stop();
                     flag = false;
                 }
             }
