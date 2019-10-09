@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Onryocon : MonoBehaviour {
 
-    private float speed = 8f;
+    private float speed = 4f;
     public float rotationspeed = 1f;
     public float posrange = 10.0f;
     private Vector3 targetpos;
@@ -60,8 +60,8 @@ public class Onryocon : MonoBehaviour {
         haikai();
 
         //座標取得
-        Vector3 tmp = GameObject.Find("Onryo").transform.position;
-        GameObject.Find("Onryo").transform.position = new Vector3(tmp.x, tmp.y, tmp.z);
+        Vector3 tmp = /*GameObject.Find("Onryo").*/transform.position;
+       /* GameObject.Find("Onryo").*/transform.position = new Vector3(tmp.x, tmp.y, tmp.z);
         float x = tmp.x;
         float y = tmp.y;
         float z = tmp.z;
@@ -86,10 +86,12 @@ public class Onryocon : MonoBehaviour {
             transform.position += transform.forward * speed * Time.deltaTime;
             //rb.AddForce(a * speed, 0, b * speed);
 
+            Debug.Log("追う");
+
         }
         else
         {
-            speed = 8f;
+            speed = 4f;
             targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
             haikai();
         }
