@@ -80,7 +80,7 @@ public class Onryocon : MonoBehaviour {
 
             //speed = 6f;
 
-            speed = 10f;
+            speed = 8f;
 
             //targetに向かって進む
             transform.position += transform.forward * speed * Time.deltaTime;

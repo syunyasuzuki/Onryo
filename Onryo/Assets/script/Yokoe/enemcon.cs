@@ -18,7 +18,7 @@ public class enemcon : MonoBehaviour
         Transform myTransform = transform;
 
         Vector3 pos = transform.position;
-        float x = Mathf.Sin(Time.time) * 20.0f;
+        float x = Mathf.Sin(Time.time) * 100.0f;
         transform.position = new Vector3(x+ start_Pos, pos.y, pos.z);
 
     }
