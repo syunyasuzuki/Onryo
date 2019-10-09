@@ -6,11 +6,16 @@ public class enemcon : MonoBehaviour
 {
     public float start_Pos;
 
-	// Use this for initialization
-	void Start ()
+    public AudioClip Ghost_SE;
+
+    static public AudioSource audio;
+
+    // Use this for initialization
+    void Start ()
     {
-		
-	}
+        audio = GetComponent<AudioSource>();
+        audio.clip = Ghost_SE; //audioにGhost_SEをセット
+    }
 	
 	// Update is called once per frame
 	void Update ()
