@@ -14,7 +14,6 @@ public class Onryocon : MonoBehaviour
     public Rigidbody rb;
 
     public AudioClip Onryo_SE;
-    public AudioClip Onryo_SE2;
 
     static public AudioSource audio;
 
@@ -34,6 +33,7 @@ public class Onryocon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        audio.Play();
         if (ou_set)
         {
             //targetの方に少しずつ向きが変わる
