@@ -4,117 +4,61 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class Onryocon : MonoBehaviour {
+public class Onryocon : MonoBehaviour
+{
 
-    private float speed = 4f;
-    public float rotationspeed = 1f;
-    public float posrange = 10.0f;
-    private Vector3 targetpos;
-    private float changetarget = 50f;
-    public float targetdistance;
-
+    private float speed = 8f;
     public Transform target; //追いかける対象
-    public Rigidbody rb;
-
     private Vector3 vec;
+
+    public Rigidbody rb;
 
     public AudioClip Onryo_SE;
     public AudioClip Onryo_SE2;
 
     static public AudioSource audio;
 
-    Vector3 GetRandomPosition(Vector3 currentpos)
-    {
-        return new Vector3(Random.Range(-posrange + currentpos.x, posrange + currentpos.x),
-            1.3f, Random.Range(-posrange + currentpos.z, posrange + currentpos.z));
-    }
+    public static bool ou_set;
 
-    void haikai()
-    {
-        if (targetdistance < changetarget) targetpos =
-                    GetRandomPosition(transform.position);
-
-        Quaternion targetRotation =
-            Quaternion.LookRotation(targetpos - transform.position);
-        transform.rotation =
-            Quaternion.Slerp(transform.rotation, targetRotation,
-            Time.deltaTime * rotationspeed);
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        //Debug.Log("haikai");
-    }
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         audio = GetComponent<AudioSource>();
         audio.clip = Onryo_SE; //audioにOnryo_SEをセット
-        
-        targetpos = GetRandomPosition(transform.position);
         rb = GetComponent<Rigidbody>();
+
+        ou_set = false;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-        targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
-        haikai();
-
-        //座標取得
-        Vector3 tmp = /*GameObject.Find("Onryo").*/transform.position;
-       /* GameObject.Find("Onryo").*/transform.position = new Vector3(tmp.x, tmp.y, tmp.z);
-        float x = tmp.x;
-        float y = tmp.y;
-        float z = tmp.z;
-
-        //プレイヤ座標取得
-        Vector3 tmp2 = GameObject.Find("Player").transform.position;
-        GameObject.Find("Player").transform.position = new Vector3(tmp2.x, tmp2.y, tmp2.z);
-        float x2 = tmp2.x;
-        float y2 = tmp2.y;
-        float z2 = tmp2.z;
-
-        if (tmp2.x - tmp.x <= 100 && tmp2.x - tmp.x >= -100 && tmp2.z - tmp.z <= 100 && tmp2.z - tmp.z >= -100) 
+        if (ou_set)
         {
-            //targetの向きに少しずつ向きが変わる
+            //targetの方に少しずつ向きが変わる
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(target.position - transform.position), 0.3f);
 
-            //speed = 6f;
-
-            speed = 8f;
-
             //targetに向かって進む
-            transform.position += transform.forward * speed * Time.deltaTime;
-            //rb.AddForce(a * speed, 0, b * speed);
-
+            transform.position += transform.forward * speed;
             Debug.Log("追う");
-
         }
-        else
-        {
-            speed = 4f;
-            targetdistance = Vector3.SqrMagnitude(transform.position - targetpos);
-            haikai();
-        }
-
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            Invoke("GameOver", 2.0f);
-            //audio.clip = Onryo_SE2;
-            //audio.Play();
+            ou_set = true;
         }
     }
 
-    void GameOver()
+    void OnTriggerExit(Collider other)
     {
-        SceneManager.LoadScene("GameScene");
-        //FadeCon.isFade1 = true;
-        //FadeCon.isFadeOut1 = true;
-        //Invoke("Reload", 2.0f);
+        ou_set = false;
     }
+
+
 
     //void Reload()
     //{
