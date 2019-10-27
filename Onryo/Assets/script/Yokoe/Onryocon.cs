@@ -25,6 +25,7 @@ public class Onryocon : MonoBehaviour
     {
         audio = GetComponent<AudioSource>();
         audio.clip = Onryo_SE; //audioにOnryo_SEをセット
+        //audio.Play();
         rb = GetComponent<Rigidbody>();
 
         ou_set = false;
@@ -33,7 +34,6 @@ public class Onryocon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        audio.Play();
         if (ou_set)
         {
             //targetの方に少しずつ向きが変わる

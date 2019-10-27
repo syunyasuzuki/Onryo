@@ -29,8 +29,19 @@ public class PlayerCon : MonoBehaviour {
             transform.position += transform.forward * speed *Time.deltaTime;
         }
 
-        //左クリックを押したら霊聴を使用
-        if (Input.GetMouseButtonDown(1) && !flag)
+        //右クリックを押したら霊聴を使用
+        if (Input.GetMouseButtonDown(1))
+        {
+            speed = 0.0f;
+            Onryocon.audio.Play();
+        }
+        //左クリックを押したら霊長をやめる
+        if (Input.GetMouseButtonDown(0))
+        {
+            speed = 10.0f;
+            Onryocon.audio.Stop();
+        }
+        /*if (Input.GetMouseButtonDown(1) && !flag)
         {
             audio_Con++;
             speed = 0.0f;
@@ -60,7 +71,7 @@ public class PlayerCon : MonoBehaviour {
                     flag = false;
                 }
             }
-        }
+        }*/
     }
 
     void OnCollisionEnter(Collision col)
