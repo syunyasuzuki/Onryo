@@ -8,7 +8,7 @@ public class Onryocon : MonoBehaviour
 {
 
     private float speed = 8f;
-    public Transform target; //追いかける対象
+    private Transform target; //追いかける対象
     private Vector3 vec;
 
     public Rigidbody rb;
@@ -29,6 +29,8 @@ public class Onryocon : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         ou_set = false;
+
+        target = GameObject.FindWithTag("Player").transform;
     }
 
     // Update is called once per frame
