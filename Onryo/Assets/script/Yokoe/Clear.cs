@@ -15,7 +15,9 @@ public class Clear : MonoBehaviour {
     {
         if(Input.GetKeyDown(KeyCode.Return))
         {
-            ////Invoke("Go_Title", 2.0f);
+            FadeCon.isFade1 = true;
+            FadeCon.isFadeOut1 = true;
+            Invoke("Go_Title", 2.0f);
         }    
     }
 

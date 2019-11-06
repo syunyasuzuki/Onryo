@@ -32,7 +32,7 @@ public class titleCon : MonoBehaviour
                 audio.clip = Start_SE;
                 audio.Play();
             }
-            Invoke("Scene", 4.0f);
+            Invoke("Scene", 3.0f);
         }
 	}
 

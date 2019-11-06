@@ -32,12 +32,16 @@ public class PlayerCon : MonoBehaviour {
         //右クリックを押したら霊聴を使用
         if (Input.GetMouseButtonDown(1))
         {
+            FadeCon.isFade1 = true;
+            FadeCon.isFadeOut1 = true;
             speed = 0.0f;
             Onryocon.audio.Play();
         }
         //左クリックを押したら霊長をやめる
         if (Input.GetMouseButtonDown(0))
         {
+            FadeCon.isFade1 = true;
+            FadeCon.isFadeIn1 = true;
             speed = 10.0f;
             Onryocon.audio.Stop();
         }

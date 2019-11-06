@@ -23,6 +23,8 @@ public class Onryocon2 : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            FadeCon.isFade1 = true;
+            FadeCon.isFadeOut1 = true;
             Invoke("GameOver", 2.0f);
             //audio.clip = Onryo_SE2;
             //audio.Play();
@@ -33,8 +35,6 @@ public class Onryocon2 : MonoBehaviour
     void GameOver()
     {
         SceneManager.LoadScene("GameScene");
-        //FadeCon.isFade1 = true;
-        //FadeCon.isFadeOut1 = true;
         //Invoke("Reload", 2.0f);
     }
 }

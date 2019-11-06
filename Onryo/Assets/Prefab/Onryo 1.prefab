@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4758918009838468}
   - component: {fileID: 54403955706538384}
-  - component: {fileID: 65640162830002854}
   - component: {fileID: 114902278079292314}
   - component: {fileID: 82075474281086628}
+  - component: {fileID: 135715472508630434}
   m_Layer: 0
   m_Name: Onryo 1
   m_TagString: Untagged
@@ -89,18 +89,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 84
   m_CollisionDetection: 0
---- !u!65 &65640162830002854
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1202531370867540}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 100, y: 1, z: 100}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65999797822533228
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -133,7 +121,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 100
+  MaxDistance: 80
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -215,6 +203,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ef4080e03e2714f8c208bcdf1caa6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   rb: {fileID: 0}
   Onryo_SE: {fileID: 8300000, guid: 58a49251be86ac44bb2b6282007859b8, type: 3}
+--- !u!135 &135715472508630434
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202531370867540}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 40
+  m_Center: {x: 0, y: 0, z: 0}
